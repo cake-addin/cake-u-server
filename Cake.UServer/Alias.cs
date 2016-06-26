@@ -18,6 +18,8 @@ namespace Cake.UServer {
 		public static void UServer(this ICakeContext context, UServerSettings settings) {
 			var server = new UHttpServer(settings);
 			server.Start();
+
+			while (Console.ReadLine() != "q") {}
 		}
 	}
 }
