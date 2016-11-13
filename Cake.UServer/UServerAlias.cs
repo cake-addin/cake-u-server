@@ -6,7 +6,7 @@ using Cake.Core.Annotations;
 namespace Cake.UServer {
 
 	/// <summary>
-	/// Contains funtionalyity for serving static files.
+	/// Contains funtionality for serving static files.
 	/// </summary>
 	[CakeAliasCategory("UServer")]
 	public static class UServerUAlias {
