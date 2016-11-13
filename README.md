@@ -20,7 +20,3 @@ Task("server")
         UServer(settings);
     });
 ```
-
-## License
-
-- MIT
