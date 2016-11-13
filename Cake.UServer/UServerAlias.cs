@@ -11,14 +11,14 @@ namespace Cake.UServer {
 	[CakeAliasCategory("UServer")]
 	public static class UServerUAlias {
 
-        /// <summary>
-        /// Start static server in current working directory.
-        /// </summary>
-        /// <example>
-        /// UServer(8080);
-        /// </example>
-        /// <param name="context"></param>
-        /// <param name="port"></param>
+		/// <summary>
+		/// Start static server in current working directory.
+		/// </summary>
+		/// <example>
+		/// UServer(8080);
+		/// </example>
+		/// <param name="context"></param>
+		/// <param name="port"></param>
 		[CakeMethodAlias]
 		public static void UServer(this ICakeContext context, int port) {
 			var current = new DirectoryInfo("./").FullName;
@@ -28,17 +28,17 @@ namespace Cake.UServer {
 		}
 
 
-        /// <summary>
-        /// Start static server that is specified by settings.
-        /// </summary>
-        /// <example>
-        /// UServer(new UServerSettings {
-        ///     Port = 8080,
-        ///     Path = "./dist"
-        /// });
-        /// </example>
-        /// <param name="context"></param>
-        /// <param name="settings"></param>
+		/// <summary>
+		/// Start static server that is specified by settings.
+		/// </summary>
+		/// <example>
+		/// UServer(new UServerSettings {
+		///     Port = 8080,
+		///     Path = "./dist"
+		/// });
+		/// </example>
+		/// <param name="context"></param>
+		/// <param name="settings"></param>
 		[CakeMethodAlias]
 		public static void UServer(this ICakeContext context, UServerSettings settings) {
 			var server = new UHttpServer(settings);
