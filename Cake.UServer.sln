@@ -1,9 +1,15 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.UServer", "Cake.UServer\Cake.UServer.csproj", "{68121F1E-27EE-4034-94E2-9D1F93A5E02F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.UServer.Console", "Cake.UServer.Console\Cake.UServer.Console.csproj", "{77053BCD-1688-487A-AF42-4270DD8A472E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2FFD5A61-13B8-44A0-A1BE-8337EFC34B57}"
+	ProjectSection(SolutionItems) = preProject
+		build.cake = build.cake
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,5 +25,8 @@ Global
 		{77053BCD-1688-487A-AF42-4270DD8A472E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77053BCD-1688-487A-AF42-4270DD8A472E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77053BCD-1688-487A-AF42-4270DD8A472E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal

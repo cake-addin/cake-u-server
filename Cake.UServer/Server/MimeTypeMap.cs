@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace MimeTypes {
-	public static class MimeTypeMap {
+	internal static class MimeTypeMap {
 		private static readonly Lazy<IDictionary<string, string>> _mappings = new Lazy<IDictionary<string, string>>(BuildMappings);
 
 		private static IDictionary<string, string> BuildMappings() {

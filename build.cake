@@ -2,9 +2,8 @@
 var target = Argument("target", "default");
 var npi = EnvironmentVariable("npi");
 
-Task("push")
-    .IsDependentOn("pack")
-    .Description("Push nuget")
+Task("Publsh-Nuget")
+    .IsDependentOn("Pack-Nuget")
     .Does(() => {
         var nupkg = new DirectoryInfo("./nuget").GetFiles("*.nupkg").LastOrDefault();
         var package = nupkg.FullName;
@@ -14,8 +13,7 @@ Task("push")
         });
     });
 
-Task("build")
-    .Description("Build")
+Task("Build-Release")
     .Does(() => {
         DotNetBuild("./Cake.UServer.sln", settings =>
             settings.SetConfiguration("Release")
@@ -24,9 +22,8 @@ Task("build")
             .WithProperty("TreatWarningsAsErrors","true"));
     });
 
-Task("pack")
-    .Description("Create pack")
-    .IsDependentOn("build")
+Task("Pack-Nuget")
+    .IsDependentOn("Build-Release")
     .Does(() => {
         Func<string,string> getFile = (file) => {
             var fullName = new DirectoryInfo("./Cake.UServer/bin/Release")
@@ -49,9 +46,9 @@ Task("pack")
                         Description             = "Cake.UServer",
                         //NoDefaultExcludes       = true,
                         Summary                 = "Serving static files with µHttpSharp",
-                        ProjectUrl              = new Uri("https://github.com/wk-j/cake-u-server"),
-                        IconUrl                 = new Uri("https://github.com/wk-j/cake-u-server"),
-                        LicenseUrl              = new Uri("https://github.com/wk-j/cake-u-server"),
+                        ProjectUrl              = new Uri("https://github.com/cake-addin/cake-u-server"),
+                        IconUrl                 = new Uri("https://github.com/cake-addin/cake-u-server"),
+                        LicenseUrl              = new Uri("https://github.com/cake-addin/cake-u-server"),
                         Copyright               = "MIT",
                         //ReleaseNotes            = new [] { "New version"},
                         Tags                    = new [] {"Cake", "µHttpSharp" },
@@ -60,6 +57,7 @@ Task("pack")
                         NoPackageAnalysis       = true,
                         Files                   = new [] {
                                                              new NuSpecContent { Source = getFile("Cake.UServer.dll"), Target = "bin/net45" },
+                                                             new NuSpecContent { Source = getFile("Cake.UServer.XML"), Target = "bin/net45" },
                                                              new NuSpecContent { Source = getFile("Newtonsoft.Json.dll"), Target = "bin/net45" },
                                                              new NuSpecContent { Source = getFile("uhttpsharp.dll"), Target = "bin/net45" },
                                                           },

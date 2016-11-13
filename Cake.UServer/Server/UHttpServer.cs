@@ -6,7 +6,7 @@ using uhttpsharp.RequestProviders;
 using uhttpsharp.Handlers;
 
 namespace Cake.UServer {
-	public class UHttpServer {
+	internal class UHttpServer {
 
 		private readonly UServerSettings _settings;
 		private HttpServer _httpServer = new HttpServer(new HttpRequestProvider());

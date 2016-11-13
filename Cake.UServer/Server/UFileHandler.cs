@@ -8,7 +8,7 @@ using MimeTypes;
 using System.Linq;
 
 namespace Cake.UServer {
-	public class UFileHandler : IHttpRequestHandler {
+	internal class UFileHandler : IHttpRequestHandler {
 
 		public string HttpRootDirectory { get; set; }
 
